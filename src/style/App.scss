@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+@import './variable';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Spartan', sans-serif;
+    font-weight: 700;
+}
+
+.main {
+    height: 100vh;
+    width: 100%;
+    background: $mainbg;
+    @include flex;
+    min-height: 568px;
+
+    .container {
+        // background: red;
+        width: min(90vw, 550px);
+        height: min(90vh, 700px);
+        min-height: 568px;
+
+        
+
+
+        .header {
+            @include full;
+            height: 52px;
+            margin-bottom: 31px;
+            @include flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            font-size: 30px;
+            color: white;
+            
+            
+            .left {
+                // display: inline-block;
+                vertical-align: bottom;
+                line-height: 100%;
+            }
+
+            .left.theme2 {
+                color: $topFontColor2;
+            }
+            .left.theme3 {
+                color: $topFontColor3;
+            }
+
+            .right {
+                @include flex;;
+                height: 100%;
+                align-items: flex-end;
+
+
+                .smalltheme {
+                    text-transform: uppercase;
+                    font-size: 13px;
+                }
+
+                .toggler {
+                    width: 71px;
+                    height: 100%;
+                    @include flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    margin-left: 25px;
+
+                    .selections {
+                        width: 100%;
+                        height: 45%;
+                        font-size: 13px;
+                        @include flex;
+                        align-items: flex-end;
+                        justify-content: space-around;
+                    }
+
+                    .indicator {
+                        width: 100%;
+                        background: $togglebg;
+                        height: 45%;
+                        border-radius: 40px;
+                        position: relative;
+                        cursor: pointer;
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            height: 65%;
+                            width: 22%;
+                            left: $theme1Left;
+                            top: 0;
+                            bottom: 0;
+                            margin: auto 0 auto 0;
+                            background: $buttonEqualbg;
+                            border-radius: 50%;
+                            transition: all 0.3s ease;
+
+                           
+                        }
+                    }
+
+                    .indicator.theme2 {
+                        &::after {
+                            left: $theme2Left;
+                            background: $buttonEqualbg2;
+                        }
+                    }
+
+                    .indicator.theme3 {
+                        &::after {
+                            background: $buttonEqualbg3;
+                            left: $theme3Left;
+                        }
+                    }
+
+                }
+
+
+            }
+            .right.theme2 {
+                color: $topFontColor2;
+            }
+            .right.theme3 {
+                color: $topFontColor3;
+            }
+
+            
+
+        }
+
+        .display {
+            // @include full;
+
+            height: 15.5%;
+            width: 100%;
+            padding: 30px;
+            background: $headerbg;
+            margin-bottom: 24px;
+            border-radius: $border-radius;
+            color: white;
+            @include flex;
+            justify-content: flex-end;
+            align-items: center;
+            font-size: 40px;
+
+            input {
+                @include full;
+                background: $headerbg;
+                border: none;
+                font-size: 40px;
+                font-weight: 700;
+                color: white;
+                overflow: hidden;
+                text-align: right;
+
+            }
+
+            input.theme2 {
+                color: $topFontColor2;
+            }
+            input.theme3 {
+                color: $topFontColor3;
+            }
+
+        }
+
+        .display.theme2 {
+            background: $headerbg2;
+
+            input {
+                background: $headerbg2;
+            }
+        }
+        .display.theme3 {
+            background: $headerbg3;
+            input {
+                background: $headerbg3;
+            }
+        }
+
+        .body {
+            @include full;
+            height: calc(84.5% - 83px - 25px);
+            background: $bodybg;
+            border-radius: $border-radius;
+            padding: 30px;
+            
+
+
+            .gridwrapper {
+                height: 100%;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(5, 1fr);
+                gap: 20px;
+
+
+                & > button {
+                    font-weight: 700;
+                    color: $buttonDigit;
+                    padding: 4px;
+                    background: $buttonbg;
+                    border-radius: 5px;
+                    @include flex;
+                    font-size: 28px;
+                    cursor: pointer;
+                    transition: all 0.2s ease;
+                    border: none;
+                    // what sorcery is this? click effect, must be used with line A below
+                    transition: background-color 1s ease 0;
+                    border-bottom: 3px solid $buttonShadow;
+                    
+                    
+                    
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+
+                    &:disabled:hover {
+                        transform: none;
+                        cursor: default;
+                    }
+
+
+                    &:active {
+                        background: cadetblue;
+                        // transition: 0s;
+                        transition-duration: 0s; //line A
+                    }
+
+                }
+
+                & > button.theme2 {
+                    background: $buttonbg2;
+                    border-bottom-color: $buttonShadow2;
+                    color: $buttonDigit2;
+
+                    &:active {
+                        background:tan;
+                        transition-duration: 0s; 
+                    }
+                }
+                & > button.theme3 {
+                    background: $buttonbg3;
+                    border-bottom-color: $buttonShadow3;
+                    color: $buttonDigit3;
+                    &:active {
+                        background: crimson;
+                        transition-duration: 0s; 
+                    }
+                    
+
+                }
+
+                & > button.disabled {
+                    opacity: 0.3;
+                    cursor: not-allowed;
+
+                    &:hover {
+                        transform: none;
+                    }
+
+                    &:active{
+                        background: $buttonbg;
+                    }
+
+                    &.theme2:active {
+                        background: $buttonbg2;
+                    }
+
+                    &.theme3:active {
+                        background: $buttonbg3;
+                    }
+                    
+
+                    
+                }
+
+                
+
+                .twocols {
+                    grid-column: span 2;
+                }
+
+                .uppercase {
+                    text-transform: uppercase;
+                    background: $buttonResetbg;
+                    color: white;
+                    font-size: 20px;
+                }
+                
+                .uppercase.theme2 {
+                    background: $buttonResetbg2;
+                }
+                .uppercase.theme3 {
+                    background: $buttonResetbg3;
+                }
+
+                .equals {
+                    color: white;
+                    background: $buttonEqualbg;
+                }
+
+                .equals.theme2 {
+                    background: $buttonEqualbg2;
+                }
+                .equals.theme3 {
+                    background: $buttonEqualbg3;
+                }
+
+                
+
+            }
+
+        }
+
+        .body.theme2 {
+            background: $bodybg2;
+        }
+        .body.theme3 {
+            background: $bodybg3;
+        }
+    }
+
+}
+
+.main.theme2 {
+    background: $mainbg2;
+}
+
+.main.theme3 {
+    background: $mainbg3;
+}

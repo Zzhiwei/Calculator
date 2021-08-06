@@ -1,0 +1,59 @@
+$mobile: 375px;
+$desktop: 1440px;
+$fontsize: 32px;
+
+//theme indicator
+$theme1Left: 5px;
+$theme2Left: 25px;
+$theme3Left: 50px;
+
+$border-radius: 10px;
+
+//Theme 1
+$mainbg: #3b4564;
+$headerbg: #181e32;
+$bodybg: #252c44;
+$togglebg: #262c44;
+$buttonbg: #eae3dc;
+$buttonShadow: #b5a397;
+$buttonDigit: #444b5a;
+$buttonEqualbg: #cf3731;
+$buttonResetbg: #647099;
+
+//Theme 2
+$mainbg2: #e6e6e6;
+$headerbg2: #eeeeee;
+$bodybg2: #d3cdcd;
+$togglebg2: #d4cccd;
+$buttonbg2: #e5e4e0;
+$buttonShadow2: #a59d93;
+$buttonDigit2: #33332a;
+$buttonEqualbg2: #c75004;
+$buttonResetbg2: #3b8287;
+$topFontColor2: #3c3c31;
+
+//Theme 3
+$mainbg3: #17032a;
+$headerbg3: #1d0436;
+$bodybg3: #1d0436;
+$togglebg3: #1d0436;
+$buttonbg3: #33174d;
+$buttonShadow3: #85009e;
+$buttonDigit3: #feec44;
+$buttonEqualbg3: #25e1cf;
+$buttonResetbg3: #55007c;
+$topFontColor3: #feec44;
+
+
+//mixin
+@mixin flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin full {
+    height: 100%;
+    width: 100%;
+}
+
