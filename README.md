@@ -1,4 +1,4 @@
-# Solution is done with the sole purpose of practising CSS thus html Semantics elements are not used!
+## Solution is done with the sole purpose of practising CSS thus html Semantics elements are not used.
 
 # Frontend Mentor - Calculator app solution
 
